@@ -1,15 +1,27 @@
 import React, { useContext } from 'react';
-import { Link, NavLink, Outlet } from 'react-router-dom';
+import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom';
 import Footer from '../../Componenets/Footer';
+import { AuthContext } from '../../providers/Authentication';
+import Swal from 'sweetalert2';
 
 
 const Dashboard = () => {
-    
+    const {user, logOut} = useContext(AuthContext)
+    const navigate = useNavigate()
+    console.log(user);
 // console.log(user);
  const handleSignOut=()=>{
     logOut()
-    .then()
-    .catch()
+    .then(()=>{
+         
+            Swal.fire({
+                title: "Good job!",
+                text: "You successfully Logout!",
+                icon: "success"
+              });
+              navigate('/')
+        
+    })
 }
     const dashboardlinks = <>
         <li className='p-2 text-lg'> <NavLink to={'/dashboard/profile'} className={({ isActive }) => (isActive ? 'text-blue-500' : '')}>My Profile</NavLink></li>
@@ -23,7 +35,7 @@ const Dashboard = () => {
                 <div className="drawer-content bg-cover text-white bg-[url('/Banner.jpg')] flex flex-col items-center justify-center">
                     <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button md:hidden">Open Menu</label>
                     
-                    <h1 className='text-3xl text-center'>WelCome  To Dashboard</h1>
+                    <h1 className='text-3xl text-center'>WelCome {user?.displayName} To Dashboard</h1>
                     
                     <Outlet></Outlet>
                 </div>

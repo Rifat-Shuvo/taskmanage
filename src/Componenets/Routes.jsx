@@ -10,6 +10,7 @@ import Dashboard from '../Pages/Dashboard/Dashboard';
 import Myprofile from '../Pages/Dashboard/Myprofile';
 import Addtask from '../Pages/Dashboard/Addtask';
 import Managetask from '../Pages/Dashboard/Managetask';
+import Privateroute from '../providers/Privateroute';
 
 
 const Routes = createBrowserRouter([
@@ -41,19 +42,19 @@ const Routes = createBrowserRouter([
     },
     {
         path: 'dashboard',
-        element: <Dashboard></Dashboard>,
+        element: <Privateroute><Dashboard></Dashboard></Privateroute>,
         children: [
             {
                 path: 'profile',
-                element: <Myprofile></Myprofile>
+                element: <Privateroute><Myprofile></Myprofile></Privateroute>
             },
             {
                 path: 'add',
-                element: <Addtask></Addtask>
+                element: <Privateroute><Addtask></Addtask></Privateroute>
             },
             {
                 path: 'manage',
-                element: <Managetask></Managetask>
+                element: <Privateroute><Managetask></Managetask></Privateroute>
             }
         ]
     }
