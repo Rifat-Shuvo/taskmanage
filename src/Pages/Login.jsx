@@ -1,13 +1,38 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SocialLiogin from '../Componenets/SocialLiogin';
+import { AuthContext } from '../providers/AuthProvider';
+import toast from 'react-hot-toast';
 
 const Login = () => {
+
+    const {signIn} = useContext(AuthContext)
+    // const location = useLocation()
+    const navigate = useNavigate()
+
+    const handleLogin = (e) =>{
+        e.preventDefault()
+        const form = e.target
+        const email = form.email.value
+        const password = form.password.value
+        signIn(email, password)
+        .then(res => {
+
+            navigate('/dashboard')
+            toast.success('login success')
+            console.log(res);
+        })
+        .catch(err=>{
+            toast.error('An Error Occured Try Again')
+            console.log(err);
+        })
+    }
+
     return (
         <div className=' bg-[url("/Banner.jpg")] bg-cover min-h-screen flex justify-center items-center'>
             <div className='bg-base-100 p-5 rounded-xl shadow-xl w-[31%]'>
                 <h1 className='text-center text-xl font-bold text-blue-500'> Please Login Now</h1>
-                <form>
+                <form onSubmit={handleLogin}>
                     <label className='label'>
                         <span className='text-blue-500 font-medium'>Email:</span>
                     </label>

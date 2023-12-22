@@ -6,6 +6,10 @@ import Login from '../Pages/Login';
 import Register from '../Pages/Register';
 import Contact from '../Pages/Contact';
 import About from '../Pages/About';
+import Dashboard from '../Pages/Dashboard/Dashboard';
+import Myprofile from '../Pages/Dashboard/Myprofile';
+import Addtask from '../Pages/Dashboard/Addtask';
+import Managetask from '../Pages/Dashboard/Managetask';
 
 
 const Routes = createBrowserRouter([
@@ -34,6 +38,24 @@ const Routes = createBrowserRouter([
     {
         path: '/register',
         element: <Register></Register>
+    },
+    {
+        path: 'dashboard',
+        element: <Dashboard></Dashboard>,
+        children: [
+            {
+                path: 'profile',
+                element: <Myprofile></Myprofile>
+            },
+            {
+                path: 'add',
+                element: <Addtask></Addtask>
+            },
+            {
+                path: 'manage',
+                element: <Managetask></Managetask>
+            }
+        ]
     }
 ])
 
