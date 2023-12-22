@@ -1,32 +1,17 @@
 import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SocialLiogin from '../Componenets/SocialLiogin';
-import { AuthContext } from '../providers/AuthProvider';
-import toast from 'react-hot-toast';
+
 
 const Login = () => {
 
-    const {signIn} = useContext(AuthContext)
-    // const location = useLocation()
-    const navigate = useNavigate()
-
-    const handleLogin = (e) =>{
-        e.preventDefault()
-        const form = e.target
-        const email = form.email.value
-        const password = form.password.value
-        signIn(email, password)
-        .then(res => {
-
-            navigate('/dashboard')
-            toast.success('login success')
-            console.log(res);
-        })
-        .catch(err=>{
-            toast.error('An Error Occured Try Again')
-            console.log(err);
-        })
-    }
+const handleLogin = (e) =>{
+ e.preventDefault()
+ const form = e.target
+ const email = form.email.value
+ const password = form.password.value
+ console.log(email,password);
+}
 
     return (
         <div className=' bg-[url("/Banner.jpg")] bg-cover min-h-screen flex justify-center items-center'>
@@ -36,11 +21,11 @@ const Login = () => {
                     <label className='label'>
                         <span className='text-blue-500 font-medium'>Email:</span>
                     </label>
-                    <input className='border border-blue-500 rounded-lg w-full p-3' type="email" name="email" id="" placeholder='Enter your email here' />
+                    <input className='border border-blue-500 rounded-lg w-full p-3' type="email" name="email"  placeholder='Enter your email here' />
                     <label className='label'>
                         <span className='text-blue-500 font-medium'>Password:</span>
                     </label>
-                    <input className='mb-4 border border-blue-500 rounded-lg w-full p-3' type="password" name="password" id="" placeholder='Enter your password here' />
+                    <input className='mb-4 border border-blue-500 rounded-lg w-full p-3' type="password" name="password"  placeholder='Enter your password here' />
                     <label>Don't have an account? <span className='text-red-500 text-sm italic underline font-bold'><Link to="/register">Register Now</Link></span></label>
                     <div className='my-5 text-center'>
                     <button className='btn btn-outline btn-primary rounded-full'>Login Now</button>

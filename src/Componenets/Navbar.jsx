@@ -8,22 +8,22 @@ const Navbar = () => {
   <NavLink to={'/contact'} className={({ isActive }) => (isActive ? 'text-blue-500 underline' : '')}><li className='px-5 font-semibold'>Contact</li></NavLink></>
     return (
         <div>
-            <div class="navbar bg-blue-100">
-        <div class="navbar-start">
+            <div className="navbar bg-blue-100">
+        <div className="navbar-start">
           
-          <a class="btn btn-ghost text-xl">Rifat hossain shuvo</a>
+          <a className="btn btn-ghost text-xl">Rifat hossain shuvo</a>
         </div>
-        <div class="navbar-end">
-          <div class="hidden md:flex">
-            <ul class="menu menu-horizontal px-1">
+        <div className="navbar-end">
+          <div className="hidden md:flex">
+            <ul className="menu menu-horizontal px-1">
                 {navlinks}
               </ul>
           </div>
-          <div class="dropdown dropdown-end">
-            <div tabindex="0" role="button" class="btn btn-ghost md:hidden">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-14 h-7 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <div className="dropdown dropdown-end">
+            <div tabIndex="0" role="button" className="btn btn-ghost md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-14 h-7 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </div>
-            <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-blue-100 rounded-box w-52">
+            <ul tabIndex="0" className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-blue-100 rounded-box w-52">
               {navlinks}
             </ul>
           </div>

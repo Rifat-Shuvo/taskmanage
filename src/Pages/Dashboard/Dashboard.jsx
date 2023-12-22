@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink, Outlet } from 'react-router-dom';
 import Footer from '../../Componenets/Footer';
 
+
 const Dashboard = () => {
+    
+// console.log(user);
+ const handleSignOut=()=>{
+    logOut()
+    .then()
+    .catch()
+}
     const dashboardlinks = <>
         <li className='p-2 text-lg'> <NavLink to={'/dashboard/profile'} className={({ isActive }) => (isActive ? 'text-blue-500' : '')}>My Profile</NavLink></li>
         <li className='p-2 text-lg'> <NavLink to={'/dashboard/add'} className={({ isActive }) => (isActive ? 'text-blue-500' : '')}>Add Tasks</NavLink></li>
@@ -15,7 +23,7 @@ const Dashboard = () => {
                 <div className="drawer-content bg-cover text-white bg-[url('/Banner.jpg')] flex flex-col items-center justify-center">
                     <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button md:hidden">Open Menu</label>
                     
-                    <h1 className='text-3xl text-center'>WelCome To Dashboard</h1>
+                    <h1 className='text-3xl text-center'>WelCome  To Dashboard</h1>
                     
                     <Outlet></Outlet>
                 </div>
@@ -26,6 +34,7 @@ const Dashboard = () => {
                         <li className='text-xl font-bold'>Dashboard</li>
                         <li className='text-lg'><Link to={'/'}>Go Home</Link></li>
                         {dashboardlinks}
+                        <li className='p-2 text-lg'><button onClick={handleSignOut}>Logout</button></li>
                     </ul>
 
                 </div>
