@@ -1,16 +1,30 @@
 import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SocialLiogin from '../Componenets/SocialLiogin';
+import { AuthContext } from '../providers/Authentication';
+import Swal from 'sweetalert2';
 
 
 const Login = () => {
-
+const {signIn} = useContext(AuthContext)
+    const navigate = useNavigate()
 const handleLogin = (e) =>{
  e.preventDefault()
  const form = e.target
  const email = form.email.value
  const password = form.password.value
- console.log(email,password);
+//  console.log(email,password);
+signIn(email,password)
+.then(res=>{
+    if (res) {
+        Swal.fire({
+            title: "Good job!",
+            text: "You successfully Login!",
+            icon: "success"
+          });
+          navigate('/dashboard')
+    }
+})
 }
 
     return (

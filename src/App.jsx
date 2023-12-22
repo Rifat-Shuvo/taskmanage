@@ -5,6 +5,7 @@ import Footer from "./Componenets/Footer"
 
 
 
+
 function App() {
 
 
@@ -13,6 +14,7 @@ function App() {
       <Navbar></Navbar>
       <Outlet></Outlet>
       <Footer></Footer>
+     
     </>
   )
 }
