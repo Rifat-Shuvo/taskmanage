@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SocialLiogin from '../Componenets/SocialLiogin';
 import { AuthContext } from '../providers/Authentication';
@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 
 
 const Login = () => {
+    const [show, setShow] = useState(false)
 const {signIn} = useContext(AuthContext)
     const navigate = useNavigate()
 const handleLogin = (e) =>{
@@ -39,7 +40,12 @@ signIn(email,password)
                     <label className='label'>
                         <span className='text-blue-500 font-medium'>Password:</span>
                     </label>
-                    <input className='mb-4 border border-blue-500 rounded-lg w-full p-3' type="password" name="password"  placeholder='Enter your password here' />
+                    <div className='relative'>
+                    <input className='mb-4 border border-blue-500 rounded-lg w-full p-3' type= {show? "text" : "password"} name="password"  placeholder='Enter your password here' /> <button className='btn btn-primary absolute top-0 right-0' onClick={()=>{setShow((pre)=>!pre)}}>
+                        {show? <span>hide</span> : <span>show</span> }
+                    </button>
+                    </div>
+                    
                     <label>Don't have an account? <span className='text-red-500 text-sm italic underline font-bold'><Link to="/register">Register Now</Link></span></label>
                     <div className='my-5 text-center'>
                     <button className='btn btn-outline btn-primary rounded-full'>Login Now</button>
