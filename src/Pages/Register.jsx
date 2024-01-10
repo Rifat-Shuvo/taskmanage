@@ -48,7 +48,7 @@ const Register = () => {
     }
     return (
         <div className=' bg-[url("/Banner.jpg")] bg-cover min-h-screen flex justify-center items-center'>
-            <div className='bg-base-100 p-5 rounded-xl shadow-xl w-[31%]'>
+            <div className='bg-base-100 p-5 rounded-xl shadow-xl lg:w-[31%]'>
                 <h1 className='text-center text-xl font-bold text-blue-500'> Please Register Now</h1>
                 <form onSubmit={handleSignUp}>
                     <label className='label'>
@@ -67,9 +67,9 @@ const Register = () => {
                         <span className='text-blue-500 font-medium'>Password:</span>
                     </label>
                     <div className='relative'>
-                    <input className='mb-4 border border-blue-500 rounded-lg w-full p-3' type= {show? "text" : "password"} name="password"  placeholder='Enter your password here' /> <button className='btn btn-primary absolute top-0 right-0' onClick={()=>{setShow((pre)=>!pre)}}>
-                        {show? <span>hide</span> : <span>show</span> }
-                    </button>
+                    <input className='mb-4 border border-blue-500 rounded-lg w-full p-3' type= {show? "text" : "password"} name="password"  placeholder='Enter your password here' /> <span className='text-white px-1 py-3 rounded-xl bg-blue-500 absolute top-0 right-0' onClick={()=>{setShow(!show)}}>
+                        {show? <span>Hide</span> : <span>Show</span> }
+                    </span>
                     </div>
                     <label>Don't have an account? <span className='text-red-500 text-sm italic underline font-bold'><Link to="/login">Login Now</Link></span></label>
                     <div className='my-5 text-center'>

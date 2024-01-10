@@ -74,7 +74,7 @@ const Managetask = () => {
   return (
     <DragDropContext onDragEnd={handleOnDragEnd}>
 
-    <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
+    <div className='grid grid-cols-1 md:grid-cols-3 gap-11'>
 
       {isLoading ? <><h1>please wait....</h1></> : 
       <>

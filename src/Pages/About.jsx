@@ -3,7 +3,7 @@ import React from 'react';
 const About = () => {
     return (
         <div>
-        <div className="h-[100vh] text-center opacity-75 grid bg-cover bg-[url('/Banner.jpg')]">
+        <div className="md:h-[100vh] text-center opacity-75 grid bg-cover bg-[url('/Banner.jpg')]">
             <div className="col-start-1 row-start-1 bg-black bg-opacity-20 w-full h-full"></div>
             <div className="col-start-1 row-start-1 mx-auto my-auto">
                 <h1 className='text-7xl font-bold mb-7 text-white'>About US</h1>
