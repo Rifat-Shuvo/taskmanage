@@ -11,7 +11,7 @@ const Navbar = () => {
             <div className="navbar bg-blue-100">
         <div className="navbar-start">
           
-          <a className="btn btn-ghost text-xl">Rifat hossain shuvo</a>
+          <a className="btn btn-ghost text-xl">Smart Task Manager</a>
         </div>
         <div className="navbar-end">
           <div className="hidden md:flex">

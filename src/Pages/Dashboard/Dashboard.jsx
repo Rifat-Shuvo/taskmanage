@@ -33,11 +33,13 @@ const Dashboard = () => {
             <div className="drawer pt-4 md:drawer-open">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content bg-cover text-white bg-[url('/Banner.jpg')] flex flex-col items-center justify-center">
-                    <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button md:hidden">Open Menu</label>
+                    <label htmlFor="my-drawer-2" className="sticky top-0 btn btn-primary drawer-button md:hidden">Open Menu</label>
                     
                     <h1 className='text-3xl text-center'>WelCome {user?.displayName} To Dashboard</h1>
                     
+                    <div className='min-h-screen min-w-fit'>
                     <Outlet></Outlet>
+                    </div>
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>

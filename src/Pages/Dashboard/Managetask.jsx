@@ -113,7 +113,7 @@ const Managetask = () => {
         ref={provided.innerRef}
         {...provided.droppableProps}
         className='grid gap-3 grid-cols-1 bg-white p-3 rounded-lg'>
-        <h1 className='text-center font-bold text-blue-500 font-5xl'>Ongoing</h1>
+        <h1 className='text-center pb-10 font-bold text-blue-500 font-5xl'>Ongoing</h1>
       {
        
           ongoing.map((item, index) =>
@@ -141,7 +141,7 @@ const Managetask = () => {
         ref={provided.innerRef}
         {...provided.droppableProps}
         className='grid gap-3 grid-cols-1 bg-white p-3 rounded-lg'>
-        <h1 className='text-center font-bold text-blue-500 font-5xl'>Completed</h1>
+        <h1 className='text-center pb-10 font-bold text-blue-500 font-5xl'>Completed</h1>
       {
        
           completed.map((item, index) =>

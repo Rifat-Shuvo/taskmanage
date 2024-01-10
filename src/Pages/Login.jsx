@@ -23,7 +23,7 @@ signIn(email,password)
             text: "You successfully Login!",
             icon: "success"
           });
-          navigate('/dashboard')
+          navigate('/dashboard/manage')
     }
 })
 .catch(err=>{

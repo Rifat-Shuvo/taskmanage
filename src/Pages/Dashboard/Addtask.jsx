@@ -3,8 +3,11 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../../providers/Authentication';
 import Swal from 'sweetalert2';
 
+
+
 const Addtask = () => {
     const {user} = useContext(AuthContext)
+    
     const handleAdd = (e)=>{
         e.preventDefault()
         const form = e.target
@@ -22,9 +25,10 @@ const Addtask = () => {
             if (res.data.insertedId) {
                 Swal.fire({
                     title: "Success",
-                    text: "user created successfully!",
+                    text: "Task added successfully!",
                     icon: "success"
                   }); 
+                 
                 }
         })
         .catch(err=>{
@@ -34,7 +38,7 @@ const Addtask = () => {
     }
     return (
         <div>
-          <div className='bg-base-100 text-blue-700 p-5 rounded-xl shadow-xl '>
+          <div className='bg-base-100 text-blue-700 p-2 md:p-5 rounded-xl shadow-xl '>
                 <h1 className='text-center text-xl font-bold text-blue-500'> Please Add task Now</h1>
                 <form onSubmit={handleAdd}>
                     <label className='label'>
